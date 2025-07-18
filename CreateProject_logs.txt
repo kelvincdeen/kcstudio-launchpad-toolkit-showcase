@@ -1,0 +1,139 @@
+██╗  ██╗ ██████╗███████╗████████╗██╗   ██╗██████╗ ██╗ ██████╗    ███╗   ██╗██╗
+██║ ██╔╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗██║██╔═══██╗   ████╗  ██║██║
+█████╔╝ ██║     ███████╗   ██║   ██║   ██║██║  ██║██║██║   ██║   ██╔██╗ ██║██║
+██╔═██╗ ██║     ╚════██║   ██║   ██║   ██║██║  ██║██║██║   ██║   ██║╚██╗██║██║
+██║  ██╗╚██████╗███████║   ██║   ╚██████╔╝██████╔╝██║╚██████╔╝██╗██║ ╚████║███████╗
+╚═╝  ╚═╝ ╚═════╝╚══════╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
+
+
+[+] Advanced Project Architect v9.3
+This script can create a new project from scratch or restore one from a backup.
+Choose an action: (C)reate new project, or (R)estore from backup: c
+
+[+] Starting project creation...
+Enter project name (lowercase, no spaces, e.g. my-portfolio): showcase-launchpad
+
+Select components to create (space-separated numbers, e.g., '1 2 4'):
+  1) website   (Static frontend hosting with NGINX)
+  2) auth      (User login via 'magic link' email)
+  3) app       (Core business logic backend)
+  4) database  (Simple SQLite data API)
+  5) storage   (Secure file upload/download API)
+Your choice: 1 2 3 4 5
+Enter frontend domain (e.g. my-portfolio.com): example.com
+Enter API domain (e.g. api.my-portfolio.com): api.example.com
+Enter your Resend API Key (will not be shown, edit later in .env):
+  ! No Resend API Key provided. The 'auth' service will be created, but it will NOT be able to send login emails.
+Enter the FROM email address for Resend (e.g. login@mydomain.com, edit later in .env, leave empty for default):
+  ! No from-address provided, defaulting to onboarding@resend.dev
+
+[+] Provisioning system users and directory structure...
+info: Selecting UID from range 100 to 999 ...
+
+info: Selecting GID from range 100 to 999 ...
+info: Adding system user `app_showcase-launchpad' (UID 116) ...
+info: Adding new group `app_showcase-launchpad' (GID 119) ...
+info: Adding new user `app_showcase-launchpad' (UID 116) with group `app_showcase-launchpad' ...
+info: Not creating `/nonexistent'.
+  ✔ Created system user 'app_showcase-launchpad' for backend services.
+info: Selecting UID from range 100 to 999 ...
+
+info: Selecting GID from range 100 to 999 ...
+info: Adding system user `web_showcase-launchpad' (UID 117) ...
+info: Adding new group `web_showcase-launchpad' (GID 120) ...
+info: Adding new user `web_showcase-launchpad' (UID 117) with group `web_showcase-launchpad' ...
+info: Not creating `/nonexistent'.
+  ✔ Created system user 'web_showcase-launchpad' for website files.
+  ✔ Created project root at '/var/www/showcase-launchpad'.
+
+[+] Generating secrets and assigning network ports...
+  ✔ Generated secure JWT Secret.
+  ✔ Assigned stable ports for services.
+
+[+] Configuring 'website' component...
+  ✔ Created 'website' directory and set permissions.
+
+[+] Configuring 'auth' component...
+  ✔ Created 'auth' directory with logging and permissions.
+  ✔ Generated main.py logic for 'auth'.
+  ✔ Generated requirements.txt for 'auth'.
+  ✔ Installing Python dependencies for 'auth'...
+  ✔ Installed Python dependencies for 'auth'.
+  ✔ Created secure .env file for 'auth'.
+  ✔ Created systemd service file for 'auth'.
+
+[+] Configuring 'app' component...
+  ✔ Created 'app' directory with logging and permissions.
+  ✔ Generated main.py logic for 'app'.
+  ✔ Generated requirements.txt for 'app'.
+  ✔ Installing Python dependencies for 'app'...
+  ✔ Installed Python dependencies for 'app'.
+  ✔ Created secure .env file for 'app'.
+  ✔ Created systemd service file for 'app'.
+
+[+] Configuring 'database' component...
+  ✔ Created 'database' directory with logging and permissions.
+  ✔ Generated main.py logic for 'database'.
+  ✔ Generated requirements.txt for 'database'.
+  ✔ Installing Python dependencies for 'database'...
+  ✔ Installed Python dependencies for 'database'.
+  ✔ Created secure .env file for 'database'.
+  ✔ Created systemd service file for 'database'.
+
+[+] Configuring 'storage' component...
+  ✔ Created 'storage' directory with logging and permissions.
+  ✔ Generated main.py logic for 'storage'.
+  ✔ Generated requirements.txt for 'storage'.
+  ✔ Installing Python dependencies for 'storage'...
+  ✔ Installed Python dependencies for 'storage'.
+  ✔ Created secure .env file for 'storage'.
+  ✔ Created systemd service file for 'storage'.
+
+[+] Creating logrotate configuration...
+  ✔ Logrotate config created at /etc/logrotate.d/showcase-launchpad
+
+[+] Starting and enabling all backend services...
+Created symlink /etc/systemd/system/multi-user.target.wants/showcase-launchpad-auth.service → /etc/systemd/system/showcase-launchpad-auth.service.
+  ✔ Started and enabled showcase-launchpad-auth.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/showcase-launchpad-app.service → /etc/systemd/system/showcase-launchpad-app.service.
+  ✔ Started and enabled showcase-launchpad-app.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/showcase-launchpad-database.service → /etc/systemd/system/showcase-launchpad-database.service.
+  ✔ Started and enabled showcase-launchpad-database.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/showcase-launchpad-storage.service → /etc/systemd/system/showcase-launchpad-storage.service.
+  ✔ Started and enabled showcase-launchpad-storage.service.
+
+[+] Configuring NGINX reverse proxy...
+  ✔ Created NGINX config for API services.
+  ✔ Created NGINX config for website.
+
+[+] Validating and reloading NGINX...
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+  ✔ NGINX reloaded successfully.
+
+[+] Requesting SSL certificates via Certbot...
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Certificate not yet due for renewal
+Deploying certificate
+Successfully deployed certificate for api.example.com to /etc/nginx/sites-enabled/showcase-launchpad-api.conf
+Successfully deployed certificate for example.com to /etc/nginx/sites-enabled/showcase-launchpad-web.conf
+Congratulations! You have successfully enabled HTTPS on https://api.example.com and https://example.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+If you like Certbot, please consider supporting our work by:
+ * Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+ * Donating to EFF:                    https://eff.org/donate-le
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  ✔ Certbot finished successfully on attempt 1.
+
+[+] Creating project manifest file...
+  ✔ Created project manifest at '/var/www/showcase-launchpad/project.conf'.
+
+[+] ✅ Operation completed successfully for project 'showcase-launchpad'!
+-----------------------------------------------------
+Frontend URL: https://example.com
+API Base URL: https://api.example.com/v1/
+
+You can now manage this project with:
+  ./manageApp.sh showcase-launchpad
+-----------------------------------------------------

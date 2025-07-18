@@ -1,0 +1,7 @@
+2025-07-18 17:44:33,297 - storage - INFO - Storage database initialized. 
+2025-07-18 17:44:33,297 - storage - INFO - Storage database initialized.
+INFO:     Started server process [109234]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8659 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59060 - "GET /health HTTP/1.1" 200 OK

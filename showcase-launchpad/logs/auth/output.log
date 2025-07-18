@@ -1,0 +1,7 @@
+2025-07-18 17:44:32,109 - auth - INFO - Auth database initialized with users and login_tokens tables. 
+2025-07-18 17:44:32,109 - auth - INFO - Auth database initialized with users and login_tokens tables.
+INFO:     Started server process [109073]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8656 (Press CTRL+C to quit)
+INFO:     127.0.0.1:37868 - "GET /health HTTP/1.1" 200 OK

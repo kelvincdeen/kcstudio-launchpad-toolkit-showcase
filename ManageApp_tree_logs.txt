@@ -1,0 +1,91 @@
+██╗  ██╗ ██████╗███████╗████████╗██╗   ██╗██████╗ ██╗ ██████╗    ███╗   ██╗██╗
+██║ ██╔╝██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗██║██╔═══██╗   ████╗  ██║██║
+█████╔╝ ██║     ███████╗   ██║   ██║   ██║██║  ██║██║██║   ██║   ██╔██╗ ██║██║
+██╔═██╗ ██║     ╚════██║   ██║   ██║   ██║██║  ██║██║██║   ██║   ██║╚██╗██║██║
+██║  ██╗╚██████╗███████║   ██║   ╚██████╔╝██████╔╝██║╚██████╔╝██╗██║ ╚████║███████╗
+╚═╝  ╚═╝ ╚═════╝╚══════╝   ╚═╝    ╚═════╝ ╚═════╝ ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
+
+===================================================================================
+  Project Operator: showcase-launchpad
+===================================================================================
+
+--- Main ---
+  1) Show Project Info
+  2) Restart a Backend Service
+  3) View Live Logs
+  4) Check all backend apps health
+  5) Show Detailed Service Status
+  6) Reload Website Files & Permissions
+  N) Reload NGINX Configuration
+
+--- Developer Tools ---
+  A) Show Admin API Keys
+  J) Rotate JWT Secret...
+  P) Deploy from Local Path...
+  U) Deploy from URL...
+  E) Manage .env Variables...
+  D) Explore Project Databases (litecli)...
+  S) Open Service Shell
+  T) View Project Directory Tree
+  F) Edit Any File in a Backend Component (fzf)
+
+--- Maintenance & Danger Zone ---
+  B) Backup Menu...
+  X) DELETE this Project...
+
+===================================================================================
+  H) Help             Q) Quit
+===================================================================================
+Enter choice: t
+
+[+] Displaying directory tree for 'showcase-launchpad' (max depth: 3, ignoring venv):
+/var/www/showcase-launchpad
+├── app
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── helpers.py
+│   ├── main.py
+│   └── requirements.txt
+├── auth
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── email_template.html
+│   ├── helpers.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── users.db
+├── database
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── data.db
+│   ├── helpers.py
+│   ├── main.py
+│   └── requirements.txt
+├── logs
+│   ├── app
+│   │   └── output.log
+│   ├── auth
+│   │   └── output.log
+│   ├── database
+│   │   └── output.log
+│   └── storage
+│       └── output.log
+├── project.conf
+├── storage
+│   ├── __pycache__
+│   │   ├── helpers.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── files
+│   ├── helpers.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── storage.db
+└── website
+    └── index.html
+
+16 directories, 30 files
+
+Press [Enter] to return to the menu...

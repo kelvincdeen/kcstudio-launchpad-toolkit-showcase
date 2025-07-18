@@ -1,0 +1,9 @@
+2025-07-18 17:44:33,191 - database - INFO - Database initialized with flexible JSON hybrid schema. 
+2025-07-18 17:44:33,191 - database - INFO - Database initialized with flexible JSON hybrid schema.
+2025-07-18 17:44:33,196 - database - INFO - Database indexes created.
+2025-07-18 17:44:33,196 - database - INFO - Database indexes created.
+INFO:     Started server process [109186]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8658 (Press CTRL+C to quit)
+INFO:     127.0.0.1:37834 - "GET /health HTTP/1.1" 200 OK
