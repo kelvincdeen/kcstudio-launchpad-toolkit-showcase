@@ -1,5 +1,5 @@
-<a href="https://kcstudio.nl">
-  <img src="https://kcstudio.nl/img/KCstudio_Launchpad_Logo.webp" alt="KCStudio Launchpad Logo" width="50px">
+<a href="https://launchpad.kcstudio.nl">
+  <img src="https://launchpad.kcstudio.nl/img/KCstudio_Launchpad_Logo.webp" alt="KCStudio Launchpad Logo" width="50px">
 </a>
 
 # This is the result dir from KCstudio Launchpad Toolkit.
